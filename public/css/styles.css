@@ -9,52 +9,29 @@ body{
     background-color: #ebebeb;
 }
 
-div.top-header{
+.logo{
+    width:400px;    
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+    
+.container {
+    padding: 3rem;
+    width: 400px;
+}
+
+/*productos*/
+
+div.compra{
     display: flex;
     flex-wrap: wrap;
-}
-
-header{
-    background-color: #EAC926;
-}
-
-
-
-/*Paleta de colores
-Amarillo: #EAC926;
-Azul: #03264C;
-Celeste: #1259c3;
-Gris oscuro: #666;
-Gris claro: #ebebeb;
-Verde: #39b54a;
-
-/*tipografia:robotto
-
-/*Tamaños Tipográficos
-Cuerpos de texto: 12px
-Titulares (Basado en tu última visita/Ofertas): 24px
-Precios: 18px
-Descuentos: 16px
-Descripciones: 16px
-
-
-
-
-/**
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
-
-body{
-    font-family: 'Roboto', sans-serif;
-    background-color: #ebebeb;
-}
-
-div.top-header{
-    display: flex;
-    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    margin: 0px 20px; 
 }
 
 div.burger-menu{
@@ -77,8 +54,6 @@ div.burger-menu i:hover{
     background-color: #0022AA;
 }
 
-
-
 p{
     font-size: 12px;
 }
@@ -89,6 +64,7 @@ h3{
 
 header{
     background-color: #EAC926;
+    padding: 20px;
 }
 
 header img,
@@ -105,12 +81,16 @@ header ul li a{
     color: #000;
 }
 
-div.last-visit,
-div.offers{
-    display: flex;
-    flex-wrap: wrap;
-}
+/*seccion de ventas*/
 
+.last-visit, .offers{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+   
 article div.main-article{
     width: 100%;
     display: flex;
@@ -118,62 +98,80 @@ article div.main-article{
     align-items: baseline;
     border-top: 1px solid #ebebeb;
     position: relative;
-    padding: 20px;
+    padding: 15px;
 }
-
+   
 .price{
     font-size: 18px;
     width: 30%;
 }
-
+   
 .discount,
 .description{
     font-size: 16px;
-    font-weight: normal;
+    font-weight: bold;     
 }
-
+  
 .discount{
     width: 70%;
 }
-
+   
 .description{
     margin-top: 20px;
 }
-
+   
 h3,
 .description{
     color: #666;
 }
-
+   
 section.banner img{
     width: 100%;
     display: block;
 }
-
+   
 main{
     width: 90%;
     margin: 0 auto;
 }
-
+   
 main section h3{
     margin: 20px 0px;
 }
 
+main article{
+    transition: all .5s ease-in;
+}
+  
+main article .description{
+    height: 0px;
+    overflow: hidden;  
+}
+
+main article:hover .description{
+    height: 40px;
+    overflow: auto;
+}
+  
 main section article{
     background-color: #fff;
     margin: 10px 0px;
 }
-
+   
 main section article img{
     display: block;
     width: 100%;
+}
+
+main section article:hover{
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
 main section article i,
 .discount{
     color: #39b54a;
 }
-
+   
 main section article i{
     display: block;
     font-size: 16px;
@@ -186,12 +184,21 @@ main section article i{
     position: absolute;
     right: 20px;
     top: -15px;
+    transition: .4s all
 }
+  
+main section article i:hover{
+    transform: rotate(360deg);
+}
+
+/*footer*/
 
 footer{
     background-color: #fff;
     color: #666;
     padding: 20px 5%;
+    text-align: center;
+    justify-content: center;
 }
 
 footer article{
@@ -200,69 +207,144 @@ footer article{
 
 footer i{
     color: #1259c3;
+    font-size: 2em;
+    margin-top: 10px;
+    
 }
 
-/* propio de los formularios */
+footer i:hover{
+    color: #eac926 ;
+}
 
-.login input,
-.register input{
+.divfoot{
+    background-color: #fff;
+    color: #666;
+    padding: 20px 5%;
+    text-align: center;    
+  }
+
+/*media query*/
+
+@media (min-width: 768px){
+
+.main-header-top-bar{    
+    display: flex;
+    justify-content: space-between;
+}
+
+.copy-header{
+    max-width: 350px;
+    text-align: right;
+}
+
+.hamburguer-button{
+    display: none;
+}
+
+.main-navbar{
+    display: flex;
+    justify-content: space-between;    
+}
+
+.main-navbar ul {
+    display: flex;
+}
+
+.main-navbar li {
+    margin: 0 5px;
+    font-size: 18px;            
+}
+
+main section article{
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+.wrapper{
+    display: block;
+}
+
+.logo{
+    width: 200px;
+}
+
+.container{
+    width: 325px;
+} 
+
+.last-visit, .offers {
+    flex-direction: row;
+    justify-content: space-between;        
+    flex-wrap: wrap;    
+}
+
+main section article{
+    width: 49%;
+}
+
+main section h3{
     width: 100%;
-    padding: 10px;
-    margin: 20px 0px;
-    border-radius: 5px;
-    border: 0px;
 }
 
-.login input[type='submit'],
-.register input[type='submit']{
-    color: #FFF;
-    background-color: #0044AA;  
-    border-radius: 5px;
+} 
+  
+    
+@media (min-width: 1200px){
+
+.logo{
+    width: 300px;
 }
 
-.login input[type='submit']:hover,
-.register input[type='submit']:hover{
-    background-color: #0022AA;
+.main-header-top-bar .main-navbar{
+    max-width: 1200px;
+    margin: auto;
 }
 
-.register input[type='reset']{
-    color: #FFF;
-    background-color: #AA0044;
+.main-header-top-bar{
+    align-items: center;      
 }
 
-.register input[type='reset']:hover{
-    background-color: #CC1155;
+.copy-header{
+    max-width: none;
+    font-weight: 400;
+    font-size: 22;
+    margin: 0;      
 }
 
-div.profile{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+.main-navbar{
+    margin-top: 40px;
 }
 
-div.profile input,
-div.profile label{
-    width: auto;
-    width: auto;
+.main-navbar li {
+    margin: 0 10px;
 }
 
-div.interests{
-    display: flex;
-    flex-wrap: wrap;
+.main-navbar a {
+    font-size: 19px;    
 }
 
-div.interests div{
-    width: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
+footer{
+    display: flex;    
 }
 
-div.interests div input,
-div.interests div label{
-    width: auto;
+footer article{
+    width: 300px;
 }
 
-div.interests div input{
-    margin: 20px;
+.divfoot{
+    text-align: center;
+}
+
+footer i:hover{
+    color: #eac926 ;
+}
+    
+.last-visit, .offers {
+    flex-direction: row;
+    justify-content: space-between;      
+    flex-wrap: wrap;    
+}
+
+main section article{
+    width: 24%;
+}
 }
